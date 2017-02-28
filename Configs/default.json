@@ -1,9 +1,9 @@
 {
-    "name": "packetName",
+    "name": "PacketName",
     "id": "2",
     "keys": 
     {
-        "speed": "int",
+        "speed": "int32_t",
         "accition": "float"
     }
 }
