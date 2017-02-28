@@ -12,7 +12,8 @@
             "cwd": "${workspaceRoot}",
             "stopOnEntry": false, 
             "preLaunchTask": null, 
-            "runtimeExecutable": "${workspaceRoot}/node_modules/.1.4.13@electron-prebuilt/dist/electron.exe", 
+            //"runtimeExecutable": "${workspaceRoot}/node_modules/.1.4.13@electron-prebuilt/dist/electron.exe", 
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.1.4.13@electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron", 
             "runtimeArgs": [
                 "--nolazy"
             ], 
