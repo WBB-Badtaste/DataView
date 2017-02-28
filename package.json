@@ -1,11 +1,15 @@
 {
-    "name": "ae_sample", 
-    "version": "1.0.0", 
-    "description": "", 
-    "main": "./app/main.js", 
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    }, 
-    "author": "JoMar", 
-    "license": "UNLICENSED"
+  "name": "ae_sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./app/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JoMar",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron-prebuilt": "^1.4.13",
+    "gulp": "^3.9.1"
+  }
 }
