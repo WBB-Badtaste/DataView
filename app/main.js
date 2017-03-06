@@ -1,7 +1,7 @@
 //采用javascript严格模式
-//'use strict';
+'use strict'
 
-// 应用的控制模块
+const configHandler = require('./configHandler')
 const {app, BrowserWindow, dialog, ipcMain}= require('electron')
 
 var mainWindow = null
@@ -14,7 +14,9 @@ function CreateWindow() {
   mainWindow.once('ready-to-show',  ()=>{mainWindow.show()})
 }
 
-app.on('window-all-closed', ()=> {app.quit()})
+app.on('window-all-closed', ()=> {
+  app.quit()
+})
 
 app.on('ready', ()=> {
   CreateWindow()
@@ -26,21 +28,28 @@ app.on('activate', ()=> {
   }
 })
 
-ipcMain.on('ConsolePrint', (event, str)=> {
-  console.log(str)
+ipcMain.on('ConsolePrint', (event, object)=> {
+  console.log(object)
 })
 
-ipcMain.on('OpenConfigFile', (event)=> {
-  var dir = dialog.showOpenDialog({
+ipcMain.on('OpenConfigFile', ()=> {
+
+  // open file dialog
+  dialog.showOpenDialog({
     browserWindow: this,
     title: "Open Config File",
     defaultPath: "./Config",
-    filters: [
-      {name: 'Configs', extensions: ['json', 'xml']},
-      {name: 'All Files', extensions: ['*']}
-    ],  
+    filters: [{name: 'Configs', extensions: ['json', 'xml']}, {name: 'All Files', extensions: ['*']}],  
     properties: ["openFile", "createDirectory"]
-  })
+  }, (files)=> {
 
-  console.log(dir)
+    // parser
+    configHandler.parser(files[0], (config)=> {
+      console.log(config)
+      config.forEach((packetStruct)=> {
+        
+        // set config tree 
+      })
+    })
+  })
 })

@@ -1,9 +1,29 @@
-{
-    "name": "PacketName",
-    "id": "2",
-    "keys": 
+[
     {
-        "speed": "int32_t",
-        "accition": "float"
+        "name": "PacketName1",
+        "id": "2",
+        "keys": {
+            "speed": "float",
+            "accition": "float"
+        }
+    },
+    {
+        "name": "PacketName2",
+        "id": "3",
+        "keys": {
+            "index": "int16_t",
+            "timeStemp": "uint32_t",
+            "speed": "float"
+        }
+    },
+    {
+        "name": "PacketName3",
+        "id": "4",
+        "keys": {
+            "index": "int16_t",
+            "timeStemp": "uint32_t",
+            "speed": "float",
+            "snag": "float"
+        }
     }
-}
+]
